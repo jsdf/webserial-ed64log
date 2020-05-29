@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Serial ed64log</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      // Redirect to HTTPS if HTTP is requested.
+      if (window.location.protocol === 'http:') {
+        window.location.href = 'https:' + window.location.href.substring(5);
+      }
+    </script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>ed64log client using Web Serial API</h1>
+      <div id="notSupported" class="hidden">
+        Sorry, <b>Web Serial</b> is not supported on this device, make sure
+        you're running Chrome 78 or later and have enabled the
+        <code>#enable-experimental-web-platform-features</code> flag in
+        <code>chrome://flags</code>
+      </div>
+      <br />
+      <button id="butConnect" type="button">Connect</button>
+    </header>
+    <main class="main">
+      <pre id="log"></pre>
+    </main>
+  </body>
+</html>
